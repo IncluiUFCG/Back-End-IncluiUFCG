@@ -1,3 +1,14 @@
+CREATE TABLE IF NOT EXISTS users(
+    id TEXT PRIMARY KEY UNIQUE NOT NULL,
+    login TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    full_name TEXT NOT NULL,
+    role TEXT NOT NULL,
+    photo BYTEA
+);
+
 CREATE TABLE IF NOT EXISTS tags (
     id TEXT PRIMARY KEY UNIQUE NOT NULL,
     name VARCHAR(255) UNIQUE NOT NULL
@@ -5,7 +16,7 @@ CREATE TABLE IF NOT EXISTS tags (
 
 CREATE TABLE IF NOT EXISTS articles (
       id TEXT PRIMARY KEY UNIQUE NOT NULL,
-      title VARCHAR(255),
+      title TEXT,
       content TEXT,
       created_date TIMESTAMP,
       date_modified TIMESTAMP,
